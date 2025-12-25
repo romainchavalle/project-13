@@ -1,0 +1,31 @@
+<div class="chat">
+    <h2>Chat avec les clients</h2>
+    <div *ngIf="allSessions$() as sessions" class="bloc-chat">
+        <div class="bloc-fullname">
+            <div *ngFor="let session of sessions; let i = index" class="session">
+                <div (click)="toggleMessages(i)" [ngClass]="{ 'focus': showMessages[i] }">{{ session.fullName }}</div>
+            </div>
+        </div>
+
+        <div class="bloc-session">
+            <div *ngFor="let session of sessions; let i = index">
+                <div *ngIf="showMessages[i]">
+                    <div *ngIf="allMessages$()[session.sessionId] as messages">
+                        <div *ngFor="let msg of messages">
+                            <p [ngClass]="{ 'userActive': msg.utilisateur == 'Service client' }">
+                                <strong>{{ msg.utilisateur }} :</strong> {{ msg.contenu }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <input type="text" [value]="newMessage()" (input)="updateMessage($event)"
+                        placeholder="Répondre..." />
+                    <button (click)="sendMessage(session.sessionId)">Envoyer</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Champ de réponse -->
+
+    </div>
+</div>

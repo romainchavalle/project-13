@@ -1,0 +1,53 @@
+.chat {
+  width: 60%;
+  margin: auto;
+
+  h2 {
+    text-align: center;
+  }
+
+  .bloc-chat {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    width: 80%;
+    margin: auto;
+    background-color: #cedadf;
+    border-radius: 25px;
+
+    .bloc-fullname {
+      min-width: 15%;
+      background-color: white;
+      min-height: 200px;
+
+      div.session {
+        border-bottom: 1px solid #4cb5d5;
+        cursor: pointer;
+
+        div {
+          padding: 10px;
+
+          &.focus {
+            background-color: #4cb5d5;
+          }
+        }
+      }
+    }
+
+    .bloc-session {
+      width: 70%;
+
+      p {
+        padding: 10px;
+        border-radius: 25px;
+        width: 100%;
+        background-color: white;
+
+        &.userActive {
+          background-color: #4cb5d5;
+        }
+      }
+    }
+  }
+}

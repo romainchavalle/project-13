@@ -1,0 +1,14 @@
+<div class="chat">
+    <h2>Chat avec le service client</h2>
+    <div *ngIf="messages$() as chat">
+        <div *ngFor="let msg of chat.messages">
+            <p [ngClass]="{ 'userActive': msg.utilisateur !== 'Service client' }">
+                <strong>{{ msg.utilisateur }} : </strong>{{ msg.contenu }}
+            </p>
+        </div>
+    </div>
+
+    <input [value]="newMessage()" (input)="updateMessage($event)" placeholder="Tapez votre message..." />
+
+    <button (click)="sendMessage()">Envoyer</button>
+</div>
