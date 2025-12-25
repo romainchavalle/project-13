@@ -8,7 +8,7 @@ This project was generated with Angular version 19. and Java version 21 / Spring
 
 Git clone:
 
->git clone https://github.com/ilyascherfi/project-13;
+>git clone "url";
 
 Go inside folder front:
 
